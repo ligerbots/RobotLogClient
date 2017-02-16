@@ -1,0 +1,7 @@
+*.class
+nt.ini
+nt.ini.bak
+robot*.xml
+robot*.idx
+robot*.lilith
+/bin/
