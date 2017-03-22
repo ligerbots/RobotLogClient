@@ -21,6 +21,7 @@ import org.slf4j.LoggerFactory;
  */
 public class RobotLogClient {
   private static final String ROBOT_IP = "10.28.77.2";
+  private static final String ROBOT_USB_IP = "172.22.11.2";
 
   static {
     ch.qos.logback.classic.Logger root =
@@ -65,6 +66,13 @@ public class RobotLogClient {
     recv.setPort(5801);
     recv.setReconnectionDelay(1000);
     recv.start();
+    
+    SocketReceiver recv2 = new SocketReceiver();
+    recv2.setContext(rootCtx);
+    recv2.setRemoteHost(ROBOT_USB_IP);
+    recv2.setPort(5801);
+    recv2.setReconnectionDelay(1000);
+    recv2.start();
   }
 
   /**
